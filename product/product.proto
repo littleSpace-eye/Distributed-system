@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "./product/proto";
+
+service ProductService {
+  rpc GetProductQuantityById(GetProductQuantityByIdRequest) returns (GetProductQuantityResponse);
+  rpc GetProductQuantityByName(GetProductQuantityByNameRequest) returns (GetProductQuantityResponse);
+  rpc AddProductQuantity(AddProductQuantityRequest) returns (AddProductQuantityResponse);
+  rpc RemoveProductQuantity(RemoveProductQuantityRequest) returns (RemoveProductQuantityResponse);
+}
+
+message GetProductQuantityByIdRequest {
+  int64 id = 1;
+}
+
+message GetProductQuantityByNameRequest {
+  string name = 1;
+}
+
+message GetProductQuantityResponse {
+  int32 quantity = 1;
+}
+
+message AddProductQuantityRequest {
+  int64 id = 1;
+  int32 quantity = 2;
+}
+
+message AddProductQuantityResponse {
+  int64 statusCode = 1;
+  string message = 2;
+  int64 id = 3;
+  int32 quantity = 4;
+}
+
+message RemoveProductQuantityRequest {
+  int64 id = 1;
+  int32 quantity = 2;
+}
+
+message RemoveProductQuantityResponse {
+  int64 statusCode = 1;
+  string message = 2;
+  int64 id = 3;
+  int32 quantity = 4;
+}

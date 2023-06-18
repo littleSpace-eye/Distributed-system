@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" data-toggle="tab" href="#button1">查看库存</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#button2">商品ID查询库存</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#button3">商品Name查询库存</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="button1">
+      <div class="mt-3">
+        <div class="input-group mb-3">
+          <input type="text" aria-label="ID" class="form-control" placeholder="商品ID" id="add_product_id">
+          <input type="text" aria-label="Number" class="form-control" placeholder="添加库存" id="add_product_input">
+          <button class="btn btn-outline-secondary" type="button" id="add_product_btn">添加库存</button>
+        </div>
+      </div>
+      <div class="mt-3">
+        <div class="input-group mb-3">
+          <input type="text" aria-label="ID" class="form-control" placeholder="商品ID" id="sub_product_id">
+          <input type="text" aria-label="Number" class="form-control" placeholder="减少库存" id="sub_product_input">
+          <button class="btn btn-outline-secondary" type="button" id="sub_product_btn">减少库存</button>
+        </div>
+      </div>
+
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">ProductName</th>
+              <th scope="col">Number</th>
+              <th scope="col">Style</th>
+              <th scope="col">Provider</th>
+            </tr>
+          </thead>
+          <tbody id="product_list">
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="button2">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">商品ID查询库存</a>
+        </div>
+      </nav>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="check_product_by_id" placeholder="product's id" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="check_product_by_id_btn">查询</button>
+      </div>
+      <div id = "inventory_by_id">
+
+      </div>
+    </div>
+    <div class="tab-pane fade" id="button3">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">商品Name查询库存</a>
+        </div>
+      </nav>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="check_product_by_name"placeholder="product's name" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="check_product_by_name_btn">查询</button>
+      </div>
+      <div id="inventory_by_name">
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./product.js"></script>
+</body>
+
+</html>
